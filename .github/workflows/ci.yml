@@ -26,3 +26,11 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover -s tests
+
+    - name: Show secret and variable
+      run: |
+        echo "Variable: ${{ vars.MY_VAR }}"
+        echo "Secret is set (hidden)"
+      env:
+        MY_SECRET: ${{ secrets.MY_SECRET }}
+
