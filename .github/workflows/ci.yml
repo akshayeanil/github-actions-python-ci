@@ -27,15 +27,18 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover -s tests
+      env:
+        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
 
     - name: Run linter (flake8)
       uses: py-actions/flake8@v2
       with:
         directory: '.'
 
-    - name: Show secret and variable
+    - name: Show secret and variable (optional)
       run: |
-        echo "Variable: ${{ vars.MY_VAR }}"
-        echo "Secret is set (hidden)"
+        echo "Variable: $MY_VAR"
+        echo "Secret is set (but hidden)"
       env:
+        MY_VAR: ${{ vars.MY_VAR }}
         MY_SECRET: ${{ secrets.MY_SECRET }}
