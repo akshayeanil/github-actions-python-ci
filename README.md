@@ -1,22 +1,50 @@
-🚀**GitHub Actions CI/CD Pipeline – Python Project**
-This repository demonstrates a complete CI/CD workflow using GitHub Actions for a Python-based project. It was developed as part of the GitHub Actions Mastery Challenge to showcase hands-on knowledge of continuous integration and deployment best practices.
+# 🌤️ Weather App (Python)
 
-**🛠️ What This Workflow Includes**
-✅ CI pipeline triggered on push and pull_request to main
+This is a simple **Python CLI weather application** that retrieves the weather for a given city using the `requests` module. This project demonstrates modern DevOps practices using **GitHub Actions** for Continuous Integration (CI).
 
-🐍 Tests against Python 3.9, 3.10, and 3.11 using a matrix strategy
+---
 
-🧪 Automatic test discovery and execution using unittest
+## 📦 Features
 
-🔐 Secure use of GitHub Secrets and repository-level variables
+- Fetch current weather data for any city (mocked or actual API can be integrated)
+- Simple and testable Python functions
+- Integrated **unit testing**
+- Automated **code linting** using `flake8`
+- Secure use of **GitHub Secrets** and **Repository Variables**
 
-📦 Upload of test result artifacts using a Marketplace Action
+---
 
-🚀 Simulated deployment step after successful tests
+## 🛠️ Tech Stack
 
-📁 **Project Structure**
+- **Python 3.11**
+- `requests`, `unittest`
+- GitHub Actions for CI
+- `flake8` for linting and style checks
+
+---
+
+## 🚀 CI/CD Workflow
+
+This project includes a GitHub Actions workflow that:
+
+- Checks out the repository
+- Sets up Python 3.11
+- Installs dependencies from `requirements.txt`
+- Runs unit tests in `/tests`
+- Runs `flake8` to check for PEP8 compliance
+- Uses GitHub Secrets and Variables securely
+
+---
+
+## 📁 Project Structure
+
+```bash
 .
-├── .github/workflows/ci.yml   # GitHub Actions workflow
-├── tests/                     # Unit test directory
-├── app.py / main.py           # Sample Python source code
-├── README.md                  # Project documentation
+├── .github/
+│   └── workflows/
+│       └── python-ci.yml
+├── weather.py
+├── tests/
+│   └── test_weather.py
+├── requirements.txt
+└── README.md
