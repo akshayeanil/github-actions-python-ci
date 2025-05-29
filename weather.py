@@ -17,7 +17,9 @@ def get_weather(city):
     data = response.json()
 
     if response.status_code == 200:
-        print(f"{city}: {data['main']['temp']}°C, {data['weather'][0]['description']}")
+        temp = data['main']['temp']
+        desc = data['weather'][0]['description']
+        print(f"{city}: {temp}°C, {desc}")
     else:
         print(f"Error: {data.get('message', 'Unknown error')}")
 
